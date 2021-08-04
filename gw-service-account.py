@@ -95,7 +95,7 @@ SCOPES = [
 DWD_URL_FORMAT = ("https://admin.google.com/ac/owl/domainwidedelegation?"
                   "overwriteClientId=true&clientIdToAdd={}&clientScopeToAdd={}")
 USER_AGENT = f"{TOOL_NAME}_create_service_account_v{VERSION}"
-KEY_FILE = (f"/tmp/{TOOL_NAME.lower()}-service-account-key-"
+KEY_FILE = (f"~/{TOOL_NAME.lower()}-service-account-key-"
             f"{datetime.datetime.now().strftime('%Y-%m-%d')}.json")
 OAUTH_CONSENT_SCREEN_URL_FORMAT = ("https://console.cloud.google.com/apis/"
                                   "credentials/consent?project={}")
