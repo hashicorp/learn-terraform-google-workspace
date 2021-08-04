@@ -12,9 +12,9 @@
 # WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
 # See the License for the specific language governing permissions and
 # limitations under the License.
-"""GCP Cloud Shell script to automate creation of a service account for GWM.
+"""GCP Cloud Shell script to automate creation of a service account for Terraform.
 
-This script streamlines the installation of GWM by automating the steps
+This script autmoates the steps
 required for obtaining a service account key. Specifically, this script will:
 
 1. Create a GCP project.
@@ -44,7 +44,7 @@ VERSION = "1"
 # GCP project IDs must only contain lowercase letters, digits, or hyphens.
 # Projct IDs must start with a letter. Spaces or punctuation are not allowed.
 TOOL_NAME = "TFWS"
-TOOL_NAME_FRIENDLY = "Google Workspace Migrate"
+TOOL_NAME_FRIENDLY = "Terraform Google Workspace"
 TOOL_HELP_CENTER_URL = "https://support.google.com/workspacemigrate/answer/10839762"
 # List of APIs to enable and verify.
 APIS = [
