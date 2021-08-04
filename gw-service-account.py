@@ -105,8 +105,9 @@ CREATE_OAUTH_WEB_CLIENT_ID_URL = ("https://support.google.com/workspacemigrate/"
 
 async def create_project():
   logging.info("Creating project...")
-  project_id = f"{TOOL_NAME}"
-  project_name = (f"{TOOL_NAME}")
+  project_id = f"{TOOL_NAME.lower()}-{int(time.time() * 10)}"
+  project_name = (f"{TOOL_NAME}-"
+                  f"{datetime.datetime.now().strftime('%Y-%m-%d')}")
   await retryable_command(f"gcloud projects create {project_id} "
                           f"--name {project_name} --set-as-default")
   logging.info("%s successfully created \u2705", project_id)
