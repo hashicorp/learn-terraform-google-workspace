@@ -96,7 +96,7 @@ DWD_URL_FORMAT = ("https://admin.google.com/ac/owl/domainwidedelegation?"
                   "overwriteClientId=true&clientIdToAdd={}&clientScopeToAdd={}")
 USER_AGENT = f"{TOOL_NAME}_create_service_account_v{VERSION}"
 KEY_FILE = (f"/tmp/{TOOL_NAME.lower()}-service-account-key-"
-            f"{datetime.datetime.now().strftime('%Y-%m-%d-%H-%M-%S')}.json")
+            f"{datetime.datetime.now().strftime('%Y-%m-%d')}.json")
 OAUTH_CONSENT_SCREEN_URL_FORMAT = ("https://console.cloud.google.com/apis/"
                                   "credentials/consent?project={}")
 CREATE_OAUTH_WEB_CLIENT_ID_URL = ("https://support.google.com/workspacemigrate/"
@@ -105,7 +105,7 @@ CREATE_OAUTH_WEB_CLIENT_ID_URL = ("https://support.google.com/workspacemigrate/"
 
 async def create_project():
   logging.info("Creating project...")
-  project_id = f"{TOOL_NAME.lower()}-{int(time.time() * 10)}"
+  project_id = f"{TOOL_NAME.lower()}-{int(time.time() * 1000)}"
   project_name = (f"{TOOL_NAME}-"
                   f"{datetime.datetime.now().strftime('%Y-%m-%d')}")
   await retryable_command(f"gcloud projects create {project_id} "
@@ -157,7 +157,7 @@ async def enable_apis():
 
 async def create_service_account():
   logging.info("Creating service account...")
-  service_account_name = f"{TOOL_NAME.lower()}-sa"
+  service_account_name = f"{TOOL_NAME.lower()}-service-account"
   service_account_display_name = f"{TOOL_NAME} Service Account"
   await retryable_command(f"gcloud iam service-accounts create "
                           f"{service_account_name} --display-name "
