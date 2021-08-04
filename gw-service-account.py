@@ -14,7 +14,7 @@
 # limitations under the License.
 """GCP Cloud Shell script to automate creation of a service account for Terraform.
 
-This script autmoates the steps
+This script automates the steps
 required for obtaining a service account key. Specifically, this script will:
 
 1. Create a GCP project.
