@@ -43,7 +43,7 @@ VERSION = "1"
 
 # GCP project IDs must only contain lowercase letters, digits, or hyphens.
 # Projct IDs must start with a letter. Spaces or punctuation are not allowed.
-TOOL_NAME = "learn-terraform-workspace"
+TOOL_NAME = "learn-tf-workspace"
 TOOL_NAME_FRIENDLY = "Google Workspace Migrate"
 TOOL_HELP_CENTER_URL = "https://support.google.com/workspacemigrate/answer/10839762"
 # List of APIs to enable and verify.
