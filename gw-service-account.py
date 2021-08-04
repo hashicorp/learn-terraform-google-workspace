@@ -43,7 +43,7 @@ VERSION = "1"
 
 # GCP project IDs must only contain lowercase letters, digits, or hyphens.
 # Projct IDs must start with a letter. Spaces or punctuation are not allowed.
-TOOL_NAME = "learn-tf-workspace"
+TOOL_NAME = "learn-tf-ws"
 TOOL_NAME_FRIENDLY = "Google Workspace Migrate"
 TOOL_HELP_CENTER_URL = "https://support.google.com/workspacemigrate/answer/10839762"
 # List of APIs to enable and verify.
@@ -105,7 +105,7 @@ CREATE_OAUTH_WEB_CLIENT_ID_URL = ("https://support.google.com/workspacemigrate/"
 
 async def create_project():
   logging.info("Creating project...")
-  project_id = f"{TOOL_NAME.lower()}-{int(time.time() * 10)}"
+  project_id = f"{TOOL_NAME.lower()}-f"{datetime.datetime.now().strftime('%Y-%m-%d')}"
   project_name = (f"{TOOL_NAME}-"
                   f"{datetime.datetime.now().strftime('%Y-%m-%d')}")
   await retryable_command(f"gcloud projects create {project_id} "
