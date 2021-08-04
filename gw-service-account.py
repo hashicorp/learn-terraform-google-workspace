@@ -157,7 +157,7 @@ async def enable_apis():
 
 async def create_service_account():
   logging.info("Creating service account...")
-  service_account_name = f"{TOOL_NAME.lower()}-service-account"
+  service_account_name = f"{TOOL_NAME.lower()}-sa"
   service_account_display_name = f"{TOOL_NAME} Service Account"
   await retryable_command(f"gcloud iam service-accounts create "
                           f"{service_account_name} --display-name "
