@@ -24,8 +24,3 @@ resource "googleworkspace_user" "users" {
   }
   recovery_email = each.value.recovery_email
 }
-
-
-output "user_email" {
-  value = [for value in googleworkspace_user.users: value.primary_email]
-}
