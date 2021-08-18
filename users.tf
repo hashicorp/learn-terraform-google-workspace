@@ -16,11 +16,16 @@ resource "googleworkspace_user" "users" {
     given_name  = each.value.first_name
   }
 
-
+  organizations {
+    department = each.value.dept
+    primary    = true
+    title      = each.value.title
+    type       = "work"
+  }
   recovery_email = each.value.recovery_email
 }
 
 
-output "user_ids" {
-  value = [for value in googleworkspace_user.users: value.id]
+output "user_email" {
+  value = [for value in googleworkspace_user.users: value.primary_email]
 }
