@@ -90,6 +90,7 @@ SCOPES = [
     "https://www.googleapis.com/auth/gmail.settings.sharing",
     "https://www.googleapis.com/auth/migrate.deployment.interop",
     "https://www.googleapis.com/auth/tasks",
+    "https://www.googleapis.com/auth/admin.directory.user.security",
     "https://www.googleapis.com/auth/userinfo.email"
 ]
 DWD_URL_FORMAT = ("https://admin.google.com/ac/owl/domainwidedelegation?"
